@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @movie.name %>
+  <%= link_to @movie.name, @movie.website, target: "_blank" %>
 </p>
 
 <p>
@@ -17,12 +17,22 @@
 
 <p>
   <strong>Genre:</strong>
-  <%= @movie.genre_id %>
+  <%= @movie.genre.name %>
 </p>
 
 <p>
   <strong>Actor:</strong>
-  <%= @movie.actor_id %>
+  <%= @movie.actor.name %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= link_to @movie.website, @movie.website %>
+</p>
+
+<p>
+  <strong>Poster:</strong>
+  <%= link_to image_tag(@movie.poster), @movie.website, target: "_blank" %>
 </p>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |

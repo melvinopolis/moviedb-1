@@ -17,11 +17,12 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= movie.name %></td>
+        <td><%= link_to movie.name, movie.website, target: "_blank" %></td>
         <td><%= movie.description %></td>
         <td><%= movie.rating %></td>
-        <td><%= movie.genre_id %></td>
-        <td><%= movie.actor_id %></td>
+        <td><%= movie.genre.name %></td>
+        <td><%= movie.actor.name %></td>
+        <td><%= link_to image_tag(movie.poster), movie.website, target: "_blank" %></td>
         <td><%= link_to 'Show', movie %></td>
         <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
         <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>

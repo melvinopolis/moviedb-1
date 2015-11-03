@@ -15,10 +15,12 @@ class ActorsController < ApplicationController
   # GET /actors/new
   def new
     @actor = Actor.new
+    @genres = Genre.all
   end
 
   # GET /actors/1/edit
   def edit
+    @genres = Genre.all
   end
 
   # POST /actors
